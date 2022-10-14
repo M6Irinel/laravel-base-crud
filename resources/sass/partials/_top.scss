@@ -1,0 +1,88 @@
+footer .top {
+    position: relative;
+    z-index: 1000;
+    background-color: #0282f9;
+
+    a {
+        color: #fff;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: filter 0.1s ease-in-out;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    @media screen and (max-width: 767.98px) {
+        a {
+            width: 100%;
+        }
+    }
+}
+
+footer .top2 {
+    position: relative;
+    z-index: 1000;
+    background-color: white;
+
+    a {
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            .footer-card-1 {
+                background-position: 0 100%;
+            }
+
+            .footer-card-2 {
+                background-position: 100% 100%;
+            }
+
+            .footer-card-3 {
+                background-position: 66.8% 100%;
+            }
+
+            .footer-card-4 {
+                background-position: 33% 100%;
+            }
+        }
+
+        .footer-card-1,
+        .footer-card-2,
+        .footer-card-3,
+        .footer-card-4 {
+            background-image: url('../img/cta-icons.png');
+            background-repeat: no-repeat;
+            background-size: 400% 200%;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .footer-card-1 {
+            background-position: 0 0;
+        }
+
+        .footer-card-2 {
+            background-position: 100% 0;
+        }
+
+        .footer-card-3 {
+            background-position: 66.8% 0;
+        }
+
+        .footer-card-4 {
+            background-position: 33% 0;
+        }
+    }
+
+    @media screen and (max-width: 767.98px) {
+        a {
+            width: 100%;
+        }
+    }
+}

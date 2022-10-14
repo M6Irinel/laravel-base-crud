@@ -1,0 +1,108 @@
+footer {
+    background-image: url('../img/footer-bg.jpg');
+    background-position: center;
+    background-size: cover;
+
+    .centerFooter {
+        display: flex;
+        gap: 30px;
+        position: relative;
+
+        .list {
+            position: relative;
+            z-index: 1000;
+            padding: 40px 0;
+        }
+
+        .logo-footer {
+            height: 150%;
+            transform: translateY(-17%);
+
+            position: absolute;
+            right: 0;
+        }
+
+        h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding-bottom: 0.6rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li a {
+                color: #838383;
+                text-decoration: none;
+                list-style: none;
+                font-size: 0.8rem;
+                transition: color 0.1s ease-in-out;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+
+        @media screen and (max-width: 767.98px) {
+            .logo-footer {
+                width: 100%;
+                height: auto;
+                transform: translateY(-17%);
+            }
+        }
+    }
+
+    .bottom {
+        position: relative;
+        background-color: #303030;
+        z-index: 1000;
+        padding: 35px;
+
+        .container {
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        button {
+            border: 2px solid #008aff;
+            background-color: transparent;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px;
+            transition: color 0.1s ease-in-out;
+
+            &:hover {
+                color: #c6c6c6;
+            }
+        }
+
+        & > div {
+            display: flex;
+            justify-content: space-between;
+
+            .right {
+                display: flex;
+                gap: 20px;
+
+                a:first-of-type {
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    transition: all 0.1s ease-in-out;
+
+                    &:hover {
+                        color: #008aff;
+                    }
+                }
+
+                a:not(:first-of-type):hover {
+                    filter: brightness(2);
+                }
+            }
+        }
+    }
+}

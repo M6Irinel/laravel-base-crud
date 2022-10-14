@@ -1,0 +1,106 @@
+section.for-main {
+    background-image: url('../img/jumbotron.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+
+    padding-top: 390px;
+
+    flex-grow: 1;
+
+    .bg {
+        background-color: #1c1c1c;
+    }
+
+    main {
+        position: relative;
+        font-size: 1rem;
+
+        .but,
+        .but2 {
+            background-color: #0282f9;
+            color: #fff;
+            border: none;
+            transition: background-color 0.2s ease-in-out;
+
+            &:hover {
+                background-color: #0055a4;
+            }
+        }
+
+        .bg-blue-DC {
+            background-color: #0282f9;
+            height: 70px;
+
+            a {
+                top: -270px;
+            }
+
+            .bg-azure-DC {
+                background-color: #00a9d9;
+            }
+        }
+
+        .border-DC-price {
+            border: 1px solid #1d1d1d;
+        }
+
+        .bg-gray-DC {
+            background-color: #f6f6f6;
+        }
+
+        .price {
+            background-color: #55ba59;
+            
+            & > div {
+                border: 1px solid #1d1d1d;
+            }
+
+            select {
+                background-color: transparent;
+                border: none;
+            }
+        }
+
+        .but {
+            font-size: 1.5rem;
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .contenitor-but {
+            text-align: center;
+
+            .but2 {
+                font-size: 0.8rem;
+                font-weight: 500;
+            }
+        }
+
+        .myCard {
+            cursor: pointer;
+            transition: all 0.1s ease-in-out;
+
+            &:hover {
+                box-shadow: 0 0 10px #313131;
+                transform: scale(1.05);
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    section {
+        padding-top: 250px;
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    section {
+        padding-top: 200px;
+    }
+}
