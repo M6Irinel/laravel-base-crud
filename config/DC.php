@@ -128,11 +128,11 @@ return [
             ]
         ]
     ],
-    
+
 
     'header-button' => [
         [
-            "href" => "/",
+            "href" => "#",
             "content" => "CHARACTERS"
         ],
         [
@@ -170,6 +170,10 @@ return [
         [
             "href" => "#",
             "content" => "SHOP"
+        ],
+        [
+            "href" => "comics.create",
+            "content" => "ADD COMIC"
         ]
     ],
 
