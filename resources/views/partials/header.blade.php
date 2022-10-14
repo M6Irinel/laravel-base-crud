@@ -18,7 +18,12 @@
                             active
                         @endif
                         ">
-                            <a class="nav-link" href="{{ route('comics.index') }}"> {{ $el['content'] }} </a>
+                        @if($el['href'] != '#')
+                            <a class="nav-link" href="{{ route($el['href']) }}"> {{ $el['content'] }} </a>
+                        @else
+                            <a class="nav-link" href="{{ $el['href'] }}"> {{ $el['content'] }} </a>
+                        @endif
+
                         </li>
                     @endforeach
                 </ul>
