@@ -5,9 +5,11 @@
             <div class="my-3">
                 <form action="{{ route('comics.store') }}" method="POST">
 
+                    @csrf
+
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" name="description" class="form-control" id="title" placeholder="Nome del titolo">
+                        <input type="text" name="title" class="form-control" id="title" placeholder="Nome del titolo">
                     </div>
                 
                     <div class="form-group">
@@ -22,7 +24,7 @@
                 
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <input type="number" name="price" class="form-control" id="price" min="0" placeholder="0.00">
+                        <input type="text" name="price" class="form-control" id="price" min="0" placeholder="0.00">
                     </div>
                 
                     <div class="form-group">

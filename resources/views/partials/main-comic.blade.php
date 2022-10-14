@@ -5,7 +5,7 @@
                 <div class="container relative">
                     <a class="block decoration-none-H border border-white t-center absolute left white gray-1-H bg-azure-DC pointer scale-H transition-transform duration-2" href="{{route('comics.index')}}">
                         <div>
-                            <img src="{{ asset($comic['thumb']) }}" alt="{{ $comic['title'] }}">
+                            <img width="190" src="{{ asset($comic['thumb']) }}" alt="{{ $comic['title'] }}">
                         </div>
                         VIEW GALLERY
                     </a>
