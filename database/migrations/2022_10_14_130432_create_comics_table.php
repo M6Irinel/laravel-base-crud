@@ -18,7 +18,7 @@ class CreateComicsTable extends Migration
             $t->string('title');
             $t->text('description')->nullable();
             $t->string('thumb')->nullable();
-            $t->string('price', 10)->default('0.00');
+            $t->string('price')->default('0.00');
             $t->string('series')->nullable();
             $t->string('sale_date', 10)->nullable();
             $t->string('type', 100)->nullable();

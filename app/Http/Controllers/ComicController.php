@@ -47,6 +47,9 @@ class ComicController extends Controller
     {
         $params = config('methods.validate')($request);
 
+        // se il parametro 'price' è vuoto allora inserisci '0.00'
+        if(empty($params["price"])) $params["price"] = '0.00';
+
         return redirect()->route('comics.show', Comic::create($params));
     }
 
