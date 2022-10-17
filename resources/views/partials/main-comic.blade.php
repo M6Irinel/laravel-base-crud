@@ -13,7 +13,7 @@
             </div>
             <div class="container py-20">
                 <div class="d-flex gap-45">
-                    <div>
+                    <div class="grow">
                         <h1 class="bold uppercase azure-9">{{ $comic['title'] }}</h1>
                         <div class="price d-flex between">
                             <button class="grow flex between i-center p-3 bg-transparent t-left border-DC-price">
@@ -63,6 +63,16 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div class="bg-gray-1">
+                <div class="container py-3 flex gap-30 center">
+                    <a href="{{route('comics.edit', $comic)}}" class="btn btn-warning bold shadow-sm">Modifica</a>
+                    <form action="{{route('comics.destroy', $comic)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" class="btn btn-danger bold shadow-sm" value="Elimina"/>
+                    </form>
                 </div>
             </div>
         </main>
