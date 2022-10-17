@@ -45,10 +45,9 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->type == 0 || trim($request->title) == '') 
-            return abort('404');
+        $params = config('methods.validate')($request);
 
-        return redirect()->route('comics.show', Comic::create($request->all()));
+        return redirect()->route('comics.show', Comic::create($params));
     }
 
     /**
@@ -70,7 +69,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('comic-edit', compact('comic'));
     }
 
     /**
@@ -82,7 +81,9 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $comic->update(config('methods.validate')($request));
+
+        return redirect()->route('comics.show', compact('comic'));
     }
 
     /**
@@ -93,6 +94,8 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }
