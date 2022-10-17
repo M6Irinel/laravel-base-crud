@@ -45,10 +45,9 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->type == 0 || trim($request->title) == '') 
-            return abort('404');
+        $params = config('methods.validate')($request);
 
-        return redirect()->route('comics.show', Comic::create($request->all()));
+        return redirect()->route('comics.show', Comic::create($params));
     }
 
     /**

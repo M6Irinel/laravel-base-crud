@@ -9,41 +9,62 @@
 
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" name="title" class="form-control" id="title" placeholder="Nome del titolo">
+                        <input type="text" name="title" class="form-control" id="title" placeholder="Nome del titolo" value="{{old('title')}}">
+                        @error('title')
+                            <div> {{ $message }} </div>
+                        @enderror
                     </div>
                 
                     <div class="form-group">
                         <label for="description">Descrizione</label>
-                        <textarea name="description" class="form-control" id="description" rows="3"></textarea>
+                        <textarea name="description" class="form-control" id="description" rows="3" value="{{old('title')}}"></textarea>
+                        @error('description')
+                            <div> {{ $message }} </div>
+                        @enderror
                     </div>
                 
                     <div class="form-group">
                         <label for="thumb">Thumb</label>
-                        <input type="text" name="thumb" class="form-control" id="thumb" placeholder="Inserisci l'URL del immagine">
+                        <input type="text" name="thumb" class="form-control" id="thumb" placeholder="Inserisci l'URL del immagine" value="{{old('title')}}">
+                        @error('thumb')
+                            <div> {{ $message }} </div>
+                        @enderror
                     </div>
                 
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <input type="text" name="price" class="form-control" id="price" min="0" placeholder="0.00">
+                        <input type="text" name="price" class="form-control" id="price" min="0" placeholder="0.00" value="{{old('title')}}">
+                        @error('price')
+                            <div> {{ $message }} </div>
+                        @enderror
                     </div>
                 
                     <div class="form-group">
                         <label for="series">Tipo di serie</label>
-                        <input type="text" name="series" class="form-control" id="series" placeholder="Inserisci il tipo di serie">
+                        <input type="text" name="series" class="form-control" id="series" placeholder="Inserisci il tipo di serie" value="{{old('title')}}">
+                        @error('series')
+                            <div> {{ $message }} </div>
+                        @enderror
                     </div>
                 
                     <div class="form-group">
                         <label for="sale_date">Data di uscita</label>
-                        <input type="text" name="sale_date" class="form-control" id="sale_date" placeholder="es: yyyy-mm-dd">
+                        <input type="text" name="sale_date" class="form-control" id="sale_date" placeholder="es: yyyy-mm-dd" value="{{old('title')}}">
+                        @error('sale_date')
+                            <div> {{ $message }} </div>
+                        @enderror
                     </div>
                 
                     <div class="form-group">
                         <label for="type">Tipo</label>
-                        <select class="form-control" id="type" name="type">
+                        <select class="form-control" id="type" name="type" value="{{old('title')}}">
                             <option value="0">--select type--</option>
                             <option value="1">comic book</option>
                             <option value="2">graphic novel</option>
                         </select>
+                        @error('type')
+                            <div> {{ $message }} </div>
+                        @enderror
                     </div>
                 
                     <div class="contenitor-but">
