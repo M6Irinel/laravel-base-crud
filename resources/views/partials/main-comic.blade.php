@@ -1,9 +1,10 @@
-<section class="for-main relative z-full">
+<section class="for-main relative" style="z-index: 10000;">
     <div class="bg-white">
         <main class="fw-bold">
             <div class="bg-blue-DC">
                 <div class="container relative">
-                    <a class="block decoration-none-H border border-white t-center absolute left white gray-1-H bg-azure-DC pointer scale-H transition-transform duration-2" href="{{route('comics.index')}}">
+                    <a class="block decoration-none-H border border-white t-center absolute left white gray-1-H bg-azure-DC pointer scale-H transition-transform duration-2"
+                        href="{{ route('comics.index') }}">
                         <div>
                             <img width="190" src="{{ asset($comic['thumb']) }}" alt="{{ $comic['title'] }}">
                         </div>
@@ -67,14 +68,41 @@
             </div>
             <div class="bg-gray-1">
                 <div class="container py-3 flex gap-30 center">
-                    <a href="{{route('comics.edit', $comic)}}" class="btn btn-warning bold shadow-sm">Modifica</a>
-                    <form action="{{route('comics.destroy', $comic)}}" method="POST">
+                    <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning bold shadow-sm">Modifica</a>
+                    <button onclick="attiva()" class="btn btn-danger bold shadow-sm">Elimina</button>
+                </div>
+            </div>
+
+            <div id="form" class="fixed top-50 left-50 translate-50 bg-gray-1 rounded-5 p-3 shadow">
+
+                <p>Sei sicuro di voler fare l'eliminazione?</p>
+
+                <div class="d-flex center gap-20">
+                    <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="f-col-3 grow">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" class="btn btn-danger bold shadow-sm" value="Elimina"/>
+                        <input type="submit" class="inline-block btn btn-danger bold shadow-sm w-100" value="SI" />
                     </form>
+
+                    <div class="f-col-3 grow">
+                        <button onclick="attiva()" class="btn btn-success bold shadow-sm w-100">NO</button>
+                    </div>
                 </div>
             </div>
         </main>
     </div>
+
+    <script>
+        const form = document.querySelector('#form');
+        form.style.display = "none";
+        let attivo = false;
+
+        function attiva() {
+            attivo = !attivo;
+            if (attivo)
+                form.style.display = "block";
+            else
+                form.style.display = "none";
+        }
+    </script>
 </section>
